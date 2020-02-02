@@ -9,9 +9,9 @@ import (
 
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/pcap"
-	"github.com/mushorg/go-dpi"
-	"github.com/mushorg/go-dpi/types"
-	"github.com/mushorg/go-dpi/utils"
+	"github.com/gaojian1456/go-dpi"
+	"github.com/gaojian1456/go-dpi/types"
+	"github.com/gaojian1456/go-dpi/utils"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
-	"github.com/mushorg/go-dpi/types"
-	"github.com/mushorg/go-dpi/utils"
+	"github.com/gaojian1456/go-dpi/types"
+	"github.com/gaojian1456/go-dpi/utils"
 	"strings"
 )
 

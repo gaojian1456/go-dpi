@@ -56,7 +56,7 @@ extern int ndpiInitialize() {
 
   set_ndpi_malloc(malloc);
   set_ndpi_free(free);
-  ndpi_struct = ndpi_init_detection_module();
+  ndpi_struct = ndpi_init_detection_module(ndpi_no_prefs);
 
   if (ndpi_struct == NULL) {
       return -1;
@@ -224,7 +224,7 @@ static int packet_processing(const u_int64_t time, const struct pcap_pkthdr *hea
 
 
 // process a new packet
-extern int ndpiPacketProcess(const struct pcap_pkthdr *header, const u_char *packet, void *flow)
+extern int ndpiPacketProcess(const struct pcap_pkthdr *header, const unsigned char *packet, void *flow)
 {
   const struct ndpi_ethhdr *ethernet = (struct ndpi_ethhdr *) packet;
   struct ndpi_iphdr *iph = (struct ndpi_iphdr *) &packet[sizeof(struct ndpi_ethhdr)];
@@ -252,7 +252,7 @@ extern int ndpiPacketProcess(const struct pcap_pkthdr *header, const u_char *pac
   }
 }
 
-extern void *ndpiGetFlow(const struct pcap_pkthdr *header, const u_char *packet) {
+extern void *ndpiGetFlow(const struct pcap_pkthdr *header, const unsigned char *packet) {
   const struct ndpi_ethhdr *ethernet = (struct ndpi_ethhdr *) packet;
   struct ndpi_iphdr *iph = (struct ndpi_iphdr *) &packet[sizeof(struct ndpi_ethhdr)];
   u_int16_t type, ip_offset;
